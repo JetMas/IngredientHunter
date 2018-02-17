@@ -36,7 +36,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4209063312997196}
-  - component: {fileID: 114049963639216608}
+  - component: {fileID: 50003179152364900}
+  - component: {fileID: 61004531928897260}
+  - component: {fileID: 114493871735735674}
+  - component: {fileID: 114975500290295308}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -51,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1977923202096472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5900002, y: -3.13, z: 0}
+  m_LocalPosition: {x: -3.5900002, y: -2.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4719910727388334}
@@ -71,6 +74,51 @@ Transform:
   m_Father: {fileID: 4209063312997196}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50003179152364900
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1977923202096472}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!61 &61004531928897260
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1977923202096472}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.15, y: -0.05}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 1.95}
+  m_EdgeRadius: 0
 --- !u!95 &95725420029063182
 Animator:
   serializedVersion: 3
@@ -88,7 +136,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114049963639216608
+--- !u!114 &114493871735735674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1977923202096472}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f6600d134c599a4ca6ab1d138f14fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 95725420029063182}
+  attackTime: 1
+  blockTime: 0.5
+  speed: 4
+--- !u!114 &114975500290295308
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -96,10 +159,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1977923202096472}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4177cf7dc27c3914d9ce733985138aa4, type: 3}
+  m_Script: {fileID: 11500000, guid: df585479b8ce20147b668164f09faab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  maxSpeed: 10
+  rigidbody: {fileID: 50003179152364900}
+  sprite: {fileID: 0}
 --- !u!212 &212733190240192740
 SpriteRenderer:
   m_ObjectHideFlags: 1
